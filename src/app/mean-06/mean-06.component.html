@@ -1,0 +1,108 @@
+<div class="container-fluid body">
+    <!--row1 judul-->
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="assets/img/icon/home-01.png" class="home" />
+        </div>
+ 
+        <div class="col-lg-6">
+            <img src="assets/img/title-01.png" class="title"/>
+        </div>
+
+        <div class="col-lg-3">
+        </div>
+    </div>
+
+    <!--row2 data nilai-->
+    <div class="row">
+        <div class="col-lg-2">
+            <img  src="assets/img/karakter1.png" class="tanya" alt="image" />
+        </div>
+
+        <!--tabel data-->
+        <div class="col-lg-8">
+            <div class="box1">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th class="text-center" style="color: aliceblue">Berat Badan Siswa</th>
+                      <th class="text-center" style="color: aliceblue">Jumlah Siswa</th>
+                    </tr>  
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let data of quiz.data">
+                      <td class="text-center" style="color: aliceblue">{{data[0]}}</td>
+                      <td class="text-center" style="color: aliceblue">{{data[1]}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--Hint-->
+        <div class="col-lg-2">
+              <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-info btn-lg" (click)="open(content)" (click)="showHint()" >
+                  Hint
+            </button>
+        </div>
+    </div>
+         <!--Hint Pop Up-->
+         <ng-template #content let-c="close" let-d="dismiss">
+            <!-- <div class="modal-body"> -->
+              <!-- <button class="btn btn-outline-info btn-lg" (click)="dp.toggle()" type="button"> -->
+                <img class="hint" src="assets/img/Mean6/hint-06.png"/>
+              <!-- </button> -->
+            <!-- </div>   -->
+           </ng-template>
+           <pre>{{closeResult}}</pre>
+
+    <!--row3 question-->
+    <div class="row">
+        <div class="col-lg-7">
+             <div class="box3">
+                <p>{{quiz.question}}</p>
+             </div>
+        </div>
+
+        <div class="col-lg-2">
+            <input class="answerbox" type="number" [(ngModel)]="answer">
+            <button class="ok" (click)="checkAnswer(answer)">
+                OK
+            </button>
+        </div>
+
+        <div class="col-lg-3">
+                {{hintUsed}}
+            <div class="score" *ngIf="userAnswer === UserAnswer.NONE">
+                  No Answer
+            </div>
+            <div *ngIf="userAnswer === UserAnswer.TRUE">
+                  True Answer
+                  <button class="score1" (click)="rightAnswer(answer, hintUsed)">
+                    NEXT
+                  </button>
+            </div>
+            <div *ngIf="userAnswer === UserAnswer.FALSE">
+                  Wrong Answer
+                <button class="score1" (click)="wrongAnswer(answer, hintUsed)">
+                    RETRY
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!--row4 timeline-->
+    <div class="row">
+          <div class="col-lg-12">
+              <img class="timeline" src="assets/img/timeline/timeline-06.png">
+           </div>               
+    </div>
+</div>
+    
+
+
+
+
+
+

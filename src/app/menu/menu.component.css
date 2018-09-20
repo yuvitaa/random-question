@@ -1,0 +1,35 @@
+.body {
+    background-image: url("img/bg.png");
+    width: 1365px;
+    height: 660px;
+}
+.renda {
+    width: 100%;
+    
+    
+}
+.menumean {
+    width: 500px; 
+    margin-top: 40px; 
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+  
+}
+
+.menumedian {
+    width: 500px; 
+    margin-top: 25px; 
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+  
+}
+.menumodus {
+    width: 500px; 
+    margin-top: 20px; 
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+  
+}
